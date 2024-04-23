@@ -23,6 +23,35 @@ Make sure you have loaded jQuery before loading this plugin.
 <script src="jquery.ajaxHelper.js"></script>
 ```
 ## Using the Plugin
+
+### ajaxFire()
+```javascript
+$(document).ready(function() {
+    $("#form").ajaxFire({
+        options: {
+            route: "example.com", // URL to send the AJAX request
+            cache: true,           // If set to true, allows caching of the AJAX response
+            loadHtmlTo: $("#result"), // jQuery element where the HTML response will be loaded
+            logEvents: true,       // If true, logs AJAX events to the console
+            isEncoded: true,       // If true, uses FormData for serialized form data; otherwise, uses serialize()
+            freezeControls: true,  // If true, freezes form controls during AJAX request
+            parseJson: true        // If true, parses the response as JSON
+        },
+        callbacks: {
+            onWait: function() {   // Callback function to be executed before the AJAX request is sent
+                // Custom code here
+            },
+            onDone: function(res) { // Callback function to be executed on successful completion of the AJAX request
+                // Custom code here
+            },
+            onError: function() {   // Callback function to be executed if there is an error in the AJAX request
+                // Custom code here
+            }
+        }
+    });
+});
+```
+
 ### ajaxFireOnEvent()
 ```javascript
 $(document).ready(function() {
