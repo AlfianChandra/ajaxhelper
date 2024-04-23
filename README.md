@@ -48,3 +48,8 @@ $(document).ready(function() {
     });
 });
 ```
+
+## Parameters
+`data`: Data to be sent in the AJAX request.
+`options`: Additional options for configuring the AJAX request.
+`callbacks`: Callback functions for different stages of the AJAX request.
